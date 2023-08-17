@@ -1,8 +1,20 @@
-import React from 'react'
+"use client"
+
+import { useGetUser } from "@/hooks/useAuth"
+import { toLocalDateString } from "@/utils/toLocalData"
 
 function Profile() {
+  const { data, isLoading } = useGetUser()
+  const { user } = data || {}
+  if (isLoading) return <p>loading...</p>
   return (
-    <div>صفحه پروفایل کاربر</div>
+    <div>
+      <h1>{user.name} خوش آمدی</h1>
+      <p>
+        <span>تاریخ پیوستن</span>
+        <span>{toLocalDateString(user.createdAt)}</span>
+      </p>
+    </div>
   )
 }
 
