@@ -7,3 +7,7 @@ export function toLocalDateString(data) {
     }
     return new Date(data).toLocaleDateString("fa-IR", options)
 }
+
+export function toLocalDateStringShort(data) {
+    return new Date(data).toLocaleDateString("fa-IR")
+}

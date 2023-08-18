@@ -1,7 +1,5 @@
 "use client"
 import { useGetUser } from "@/hooks/useAuth"
-import { getUserProfile } from "@/services/authServices"
-import { useQuery } from "@tanstack/react-query"
 import Link from "next/link"
 
 function Header() {
@@ -19,7 +17,7 @@ function Header() {
                         </Link>
                     </li>
                     <li>
-                        <Link className="block py-2" href="/product">
+                        <Link className="block py-2" href="/products">
                             محصولات
                         </Link>
                     </li>
