@@ -1,7 +1,5 @@
 "use client"
 import { useGetUser } from "@/hooks/useAuth"
-import { getUserProfile } from "@/services/authServices"
-import { useQuery } from "@tanstack/react-query"
 import Link from "next/link"
 
 function Header() {
@@ -10,7 +8,7 @@ function Header() {
     const { user, cart } = data || {}
 
     return (
-        <header className={`shadow-md mb-10 static top-0 transition-all duration-200 ${isLoading ? "blur-sm opacity-70" : "opacity-100 blur-0"}`}>
+        <header className={`shadow-md mb-10 static top-0 transition-all duration-200 bg-white ${isLoading ? "blur-sm opacity-70" : "opacity-100 blur-0"}`}>
             <nav>
                 <ul className="flex items-center justify-between py-2 container xl:max-w-screen-xl">
                     <li>
@@ -19,7 +17,7 @@ function Header() {
                         </Link>
                     </li>
                     <li>
-                        <Link className="block py-2" href="/product">
+                        <Link className="block py-2" href="/products">
                             محصولات
                         </Link>
                     </li>
