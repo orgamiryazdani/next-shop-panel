@@ -8,6 +8,7 @@ function SideBar() {
         await logout()
         document.location.href = '/'
     }
+
     return (
         <div>
             <ul className="flex flex-col space-y-8">
@@ -17,17 +18,32 @@ function SideBar() {
                     </Link>
                 </li>
                 <li>
-                    <Link href='/profile'>
+                    <Link href='/admin'>
                         داشبورد
                     </Link>
                 </li>
                 <li>
-                    <Link href='/profile/me'>
-                        اطلاعات کاربری
+                    <Link href='/admin/users'>
+                        کاربران
                     </Link>
                 </li>
                 <li>
-                    <Link href='/profile/payments'>
+                    <Link href='/admin/products'>
+                        محصولات
+                    </Link>
+                </li>
+                <li>
+                    <Link href='/admin/categories'>
+                        دسته بندی
+                    </Link>
+                </li>
+                <li>
+                    <Link href='/admin/coupons'>
+                        کد تخفیف
+                    </Link>
+                </li>
+                <li>
+                    <Link href='/admin/payments'>
                         سفارشات
                     </Link>
                 </li>

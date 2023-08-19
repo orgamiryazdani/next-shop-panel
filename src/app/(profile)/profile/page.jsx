@@ -2,10 +2,12 @@
 
 import { useGetUser } from "@/hooks/useAuth"
 import { toLocalDateString } from "@/utils/toLocalData"
+import PaymentTable from "./payments/PaymentTable"
+import Link from "next/link"
 
 function Profile() {
   const { data, isLoading } = useGetUser()
-  const { user } = data || {}
+  const { user, payments } = data || {}
   if (isLoading) return <p>loading...</p>
   return (
     <div>
@@ -14,6 +16,16 @@ function Profile() {
         <span>تاریخ پیوستن</span>
         <span>{toLocalDateString(user.createdAt)}</span>
       </p>
+      <div className="border rounded-xl p-4 mt-8">
+        <div className="flex items-center justify-between">
+          <h2 className="font-bold">آخرین سفارشات کاربر</h2>
+          <Link href='/profile/payments' className="text-primary-900">مشاهده همه سفارشات</Link>
+        </div>
+        <PaymentTable payments={payments
+          .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+          .slice(0, 3)}
+        />
+      </div>
     </div>
   )
 }
