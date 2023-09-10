@@ -1,6 +1,8 @@
+"use client"
 import RadioInput from "@/common/RadioInput"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useCallback, useEffect, useState } from "react"
+import { BsChevronDown } from "react-icons/bs"
 
 const sortOptions = [
     {
@@ -22,6 +24,7 @@ const sortOptions = [
 
 function ProductsSort() {
 
+    const [showFilter, setShowFilter] = useState(true)
     const router = useRouter()
     const pathname = usePathname()
     const searchParams = useSearchParams()
@@ -47,21 +50,27 @@ function ProductsSort() {
     }, [])
 
     return (
-        <div>
-            <p className="font-bold mb-4">مرتب سازی محصولات</p>
-            {
-                sortOptions.map((item) => {
-                    return <RadioInput
-                        id={item.id}
-                        key={item.id}
-                        label={item.label}
-                        name="product-sort"
-                        value={item.value}
-                        checked={sort === item.value}
-                        onChange={sortHandler}
-                    />
-                })
-            }
+        <div className="bg-white w-56 p-2 rounded-2xl shadow-lg mr-20 mt-10">
+            <div className="font-bold flex items-center justify-between cursor-pointer" onClick={() => setShowFilter(!showFilter)}>مرتب سازی محصولات
+                <div className={`${showFilter === true ? "rotate-180" : ""} transition-all duration-300 ease-in-out`}>
+                    <BsChevronDown />
+                </div>
+            </div>
+            <div className={`${showFilter === true ? "h-28" : "h-0"} overflow-hidden transition-all duration-300 ease-in-out`}>
+                {
+                    sortOptions.map((item) => {
+                        return <RadioInput
+                            id={item.id}
+                            key={item.id}
+                            label={item.label}
+                            name="product-sort"
+                            value={item.value}
+                            checked={sort === item.value}
+                            onChange={sortHandler}
+                        />
+                    })
+                }
+            </div>
         </div>
     )
 }

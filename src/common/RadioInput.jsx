@@ -1,6 +1,6 @@
 function RadioInput({ id, name, value, onChange, checked, label }) {
     return (
-        <div className="flex items-center gap-x-2 text-secondary-600">
+        <div className="flex items-center gap-x-2 text-secondary-600 mt-3">
             <input
                 type="radio"
                 name={name}

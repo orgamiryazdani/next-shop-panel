@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
         <Providers>
           <Toaster />
           <Header />
-          <div className="container xl:max-w-screen-xl">
+          <div className="xl:max-w-screen-xl w-full h-full">
             {children}
           </div>
         </Providers>
