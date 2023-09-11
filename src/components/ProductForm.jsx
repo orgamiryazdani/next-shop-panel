@@ -79,8 +79,11 @@ function ProductForm({ onSubmit, tags, setTags, productData, productDataOnChange
                 <div>
                     <label htmlFor="category" className="mb-2">دسته بندی</label>
                     <Select
-                        instanceId="category"
-                        
+                        id="category"
+                        onChange={setSelectedCategory}
+                        options={categories}
+                        getOptionLabel={(option) => option.title}
+                        getOptionValue={(option) => option._id}
                         defaultValue={selectedCategory}
                     />
                 </div>

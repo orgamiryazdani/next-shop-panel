@@ -1,4 +1,3 @@
-import { useGetUser } from "@/hooks/useAuth";
 import { getOneProductBySlug, getProducts } from "@/services/productService"
 import AddToCart from "./AddToCart";
 
