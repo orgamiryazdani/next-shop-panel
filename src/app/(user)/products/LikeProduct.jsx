@@ -3,7 +3,7 @@
 import { likeProduct } from "@/services/productService"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { toast } from "react-hot-toast"
-import { AiFillLike, AiOutlineLike } from "react-icons/ai"
+import { GoHeartFill } from "react-icons/go"
 
 function LikeProduct({ product }) {
     const router = useRouter()
@@ -21,7 +21,7 @@ function LikeProduct({ product }) {
     }
     return (
         <div>
-            <button onClick={likeHandler}>{product.isLiked ? <AiFillLike className="fill-primary-900 w-6 h-6" /> : <AiOutlineLike className="text-primary-700 w-6 h-6" />}</button>
+            <button onClick={likeHandler}>{product.isLiked ? <GoHeartFill className="fill-red-500 w-6 h-6" /> : <GoHeartFill className="text-secondary-300 w-6 h-6" />}</button>
         </div>
     )
 }

@@ -8,7 +8,7 @@ const sortOptions = [
     {
         id: 1,
         value: "latest",
-        label: "جید ترین"
+        label: "جدید ترین"
     },
     {
         id: 2,

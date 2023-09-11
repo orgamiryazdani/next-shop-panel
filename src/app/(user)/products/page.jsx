@@ -8,6 +8,8 @@ import AddToCart from "./[slug]/AddToCart"
 import LikeProduct from "./LikeProduct"
 import { cookies } from 'next/headers'
 import { toStringCookies } from "@/utils/toStringCookies"
+import { RiProductHuntFill } from "react-icons/ri"
+import { toPersianNumbers, toPersianNumbersWithComma } from "@/utils/toPersianNumbers"
 
 export const dynamic = "force-dynamic"; // eq to {cache :"no-store"} or SSR in pages Dir. :)
 
@@ -36,24 +38,37 @@ async function Products({ searchParams }) {
             {products.map((product) => {
               return (
                 <div
-                  className="col-span-1 border rounded-xl shadow-md p-4"
+                  className="col-span-1 bg-white rounded-xl shadow-lg p-3"
                   key={product._id}
                 >
-                  <h2 className="font-bold text-xl mb-4">{product.title}</h2>
-                  <div className="mb-4">
-                    <span>تاریخ ساختن: </span>
-                    <span className="font-bold">
-                      {toLocalDateStringShort(product.createdAt)}
-                    </span>
+                  <div className="flex items-center justify-between my-1">
+                    <h2 className="font-bold text-lg mb-4">{product.title}</h2>
+                    <div className="mb-4 text-xs text-gray-400">
+                      <span className="font-bold">
+                        {toLocalDateStringShort(product.createdAt)}
+                      </span>
+                    </div>
                   </div>
-                  <Link
-                    className="text-primary-900 font-bold mb-4 block"
-                    href={`/products/${product.slug}`}
-                  >
-                    مشاهده محصول
-                  </Link>
-                  <LikeProduct product={product} />
-                  <AddToCart product={product} />
+                  <div className="flex items-center justify-between my-1">
+                    <Link
+                      className="text-primary-700 font-bold mb-4 block border-b border-primary-700 text-sm"
+                      href={`/products/${product.slug}`}
+                    >
+                      مشاهده
+                    </Link>
+                    <LikeProduct product={product} />
+                  </div>
+                  <div className="flex items-center justify-between h-auto mt-2">
+                    <div className="flex items-center justify-center">
+                      <span className="mt-0">{toPersianNumbersWithComma(product.price)} تومان</span>
+                      {!!product.discount &&
+                        <div className="bg-rose-500 px-2 py-0.5 mr-2 rounded-xl text-white text-sm">
+                          {toPersianNumbers(product.discount)} %
+                        </div>
+                      }
+                    </div>
+                    <AddToCart product={product} />
+                  </div>
                 </div>
               );
             })}

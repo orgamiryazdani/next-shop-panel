@@ -7,6 +7,8 @@ import { useQueryClient } from "@tanstack/react-query";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
+import { BsArrow90DegDown, BsArrow90DegLeft, BsArrowLeft, BsArrowLeftShort } from "react-icons/bs";
+import { HiPlus } from "react-icons/hi";
 
 function AddToCart({ product }) {
     const queryClient = useQueryClient()
@@ -38,13 +40,17 @@ function AddToCart({ product }) {
     }
 
     return (
-        <div>
+        <div className="">
             {
-                isInCart(user, product) ? <Link className="text-primary-900 font-bold" href='/cart'>ادامه سفارش</Link> :
+                isInCart(user, product) ?
+                    <Link href='/cart'>
+                        <button className="btn btn--primary text-white"><BsArrowLeft /></button>
+                    </Link>
+                    :
                     isLoading ?
                         <Loading />
                         :
-                        <button onClick={addToCartHandler} className="btn btn--primary">اضافه کردن به سبد خرید</button>
+                        <button onClick={addToCartHandler} className="btn btn--primary text-sm"><HiPlus /></button>
             }
         </div>
     )
