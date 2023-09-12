@@ -1,5 +1,6 @@
 import Loading from "@/common/Loading"
 import { getPayment } from "@/services/paymentService"
+import { toPersianNumbers, toPersianNumbersWithComma } from "@/utils/toPersianNumbers"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { toast } from "react-hot-toast"
 
@@ -21,19 +22,19 @@ function CartSummery({ payDetail }) {
     }
 
     return (
-        <div className="border p-2 rounded-xl">
+        <div className="shadow-lg bg-white p-2 rounded-xl w-full">
             <p className="mb-4 font-bold">اطلاعات پرداخت</p>
             <div className="mb-4 flex items-center justify-between">
                 <span>جمع کل</span>
-                <span>{totalGrossPrice}</span>
+                <span>{toPersianNumbersWithComma(totalGrossPrice)}</span>
             </div>
             <div className="mb-4 flex items-center justify-between">
                 <span>تخفیف</span>
-                <span>{totalOffAmount} - </span>
+                <span>{toPersianNumbersWithComma(totalOffAmount)} - </span>
             </div>
             <div className="mb-6 flex items-center justify-between font-bold">
                 <span>مبلغ قابل پرداخت</span>
-                <span>{totalPrice}</span>
+                <span>{toPersianNumbersWithComma(totalPrice)}</span>
             </div>
             <div>
                 {isLoading ? <Loading /> : <button className="btn btn--primary w-full" onClick={createPaymentHandler}>ثبت سفارش</button>}

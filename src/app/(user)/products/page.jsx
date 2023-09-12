@@ -60,7 +60,7 @@ async function Products({ searchParams }) {
                   </div>
                   <div className="flex items-center justify-between h-auto mt-2">
                     <div className="flex items-center justify-center">
-                      <span className="mt-0">{toPersianNumbersWithComma(product.price)} تومان</span>
+                      <span className="mt-0">{toPersianNumbersWithComma(product.offPrice)} تومان</span>
                       {!!product.discount &&
                         <div className="bg-rose-500 px-2 py-0.5 mr-2 rounded-xl text-white text-sm">
                           {toPersianNumbers(product.discount)} %
