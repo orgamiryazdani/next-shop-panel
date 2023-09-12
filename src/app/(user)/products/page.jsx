@@ -30,7 +30,7 @@ async function Products({ searchParams }) {
   ]);
 
   return (
-    <div className="flex items-start justify-center w-[100vw] min-h-[100vh] h-auto pt-10">
+    <div className="flex items-start justify-center w-[100vw] min-h-[91.4vh] h-auto pt-10">
       <div className="grid grid-cols-6">
         <CategorySidebar categories={categories} />
         <div className="col-span-5 ml-24 mr-32">
@@ -43,7 +43,7 @@ async function Products({ searchParams }) {
                 >
                   <div className="flex items-center justify-between my-1">
                     <h2 className="font-bold text-lg mb-4">{product.title}</h2>
-                    <div className="mb-4 text-xs text-gray-400">
+                    <div className="mb-4 text-xs text-secondary-300">
                       <span className="font-bold">
                         {toLocalDateStringShort(product.createdAt)}
                       </span>
