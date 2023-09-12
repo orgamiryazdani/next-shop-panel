@@ -1,6 +1,6 @@
 import Loading from "@/common/Loading"
 import { getPayment } from "@/services/paymentService"
-import { toPersianNumbers, toPersianNumbersWithComma } from "@/utils/toPersianNumbers"
+import { toPersianNumbersWithComma } from "@/utils/toPersianNumbers"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { toast } from "react-hot-toast"
 

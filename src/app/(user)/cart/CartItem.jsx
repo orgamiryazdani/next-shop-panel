@@ -8,7 +8,7 @@ import { FaTrash } from "react-icons/fa"
 
 function CartItem({ cartItem }) {
     const queryClient = useQueryClient()
-    const { isLoading, mutateAsync: addToCartAsync } = useAddToCart()
+    const { mutateAsync: addToCartAsync } = useAddToCart()
     const { mutateAsync: decFromCartAsync } = useDecrementFromCart()
 
     const addToCartHandler = async () => {
