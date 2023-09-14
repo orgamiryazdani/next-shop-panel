@@ -11,17 +11,22 @@ function Slider() {
             spaceBetween={30}
             centeredSlides={true}
             autoplay={{
-                delay: 2000,
+                delay: 5000,
                 disableOnInteraction: false,
             }}
             pagination={{
                 clickable: true,
             }}
-            navigation={true}
+            navigation={false}
             modules={[Autoplay, Pagination, Navigation]}
             className="slider"
         >
-            
+            <SwiperSlide>
+                <img src='././2.jpg' alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+                <img src='././image1.jpg' alt="" />
+            </SwiperSlide>
         </Swiper>
     )
 }
