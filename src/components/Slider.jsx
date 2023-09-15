@@ -22,10 +22,10 @@ function Slider() {
             className="slider"
         >
             <SwiperSlide>
-                <img src='././2.jpg' alt="" />
+                <img src='././images/2.jpg' alt="" />
             </SwiperSlide>
             <SwiperSlide>
-                <img src='././image1.jpg' alt="" />
+                <img src='././images/3.jpg' alt="" />
             </SwiperSlide>
         </Swiper>
     )
