@@ -11,12 +11,14 @@ function Profile() {
   if (isLoading) return <p>loading...</p>
   return (
     <div>
-      <h1>{user.name} خوش آمدی</h1>
-      <p>
-        <span>تاریخ پیوستن</span>
-        <span>{toLocalDateString(user.createdAt)}</span>
-      </p>
-      <div className="border rounded-xl p-4 mt-8">
+      <div className="flex items-center justify-between font-bold mt-5 px-5">
+        <h1>{user.name} خوش آمدید</h1>
+        <p className="text-secondary-500">
+          <span>تاریخ پیوستن </span>
+          <span>{toLocalDateString(user.createdAt)}</span>
+        </p>
+      </div>
+      <div className="p-4 mt-10 mx-1">
         <div className="flex items-center justify-between">
           <h2 className="font-bold">آخرین سفارشات کاربر</h2>
           <Link href='/profile/payments' className="text-primary-900">مشاهده همه سفارشات</Link>

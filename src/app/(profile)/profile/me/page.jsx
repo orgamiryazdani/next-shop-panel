@@ -35,9 +35,9 @@ function MePage() {
     }
 
     return (
-        <div className="max-w-sm">
-            <h1>اطلاعات کاربری</h1>
-            <form onSubmit={submitHandler}>
+        <div>
+            <h1 className="font-bold text-lg">اطلاعات کاربری</h1>
+            <form className="w-full h-[90vh] flex flex-col justify-between p-5" dir="ltr" onSubmit={submitHandler}>
                 {Object.keys(includeObj(user, includesKey)).map((key) => {
                     return <TextField
                         label={key}
@@ -49,7 +49,7 @@ function MePage() {
                 })}
                 <div>
                     {
-                        isUpdating ? <Loading /> : <button type="submit" className="btn btn--primary w-full">تایید</button>
+                        isUpdating ? <Loading /> : <button type="submit" className="btn btn--primary w-full mt-10 rounded-lg">تایید</button>
                     }
                 </div>
             </form>

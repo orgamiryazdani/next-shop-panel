@@ -3,7 +3,7 @@ import { toLocalDateStringShort } from "@/utils/toLocalData"
 
 function PaymentTable({payments}) {
     return (
-        <div className="shadow-sm overflow-auto my-8">
+        <div className="shadow-lg rounded-xl overflow-auto my-8">
             <table className="border-collapse table-auto w-full min-w-[800px] text-sm">
                 <thead>
                     <tr>
