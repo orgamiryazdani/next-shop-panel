@@ -1,5 +1,6 @@
 import { userPaymentTHeads } from "@/constants/tableHeads"
 import { toLocalDateStringShort } from "@/utils/toLocalData"
+import { toPersianNumbersWithComma } from "@/utils/toPersianNumbers"
 
 function PaymentTable({payments}) {
     return (
@@ -28,7 +29,7 @@ function PaymentTable({payments}) {
                                         })}
                                     </div>
                                 </td>
-                                <td className="table__td">{payment.amount}</td>
+                                <td className="table__td">{toPersianNumbersWithComma(payment.amount)}</td>
                                 <td className="table__td">{toLocalDateStringShort(payment.createdAt)}</td>
                                 <td className="table__td">{payment.status === "COMPLETED" ? <span className="badge badge--success">موفق</span> : <span className="badge badge--error">نا موفق</span>}</td>
                             </tr>

@@ -6,7 +6,7 @@ import { HiEye } from "react-icons/hi";
 
 function PaymentListTable({ payments }) {
     return (
-        <div className="shadow-sm overflow-auto my-8">
+        <div className="shadow-lg rounded-xl bg-white overflow-auto my-8">
             <table className="border-collapse table-auto w-full min-w-[800px] text-sm">
                 <thead>
                     <tr>

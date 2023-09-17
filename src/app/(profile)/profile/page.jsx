@@ -4,21 +4,22 @@ import { useGetUser } from "@/hooks/useAuth"
 import { toLocalDateString } from "@/utils/toLocalData"
 import PaymentTable from "./payments/PaymentTable"
 import Link from "next/link"
+import Loading from "@/common/Loading"
 
 function Profile() {
   const { data, isLoading } = useGetUser()
   const { user, payments } = data || {}
-  if (isLoading) return <p>loading...</p>
+  if (isLoading) return <Loading />
   return (
     <div>
-      <div className="flex items-center justify-between font-bold mt-5 px-5">
+      <div className="flex items-center justify-between font-bold mt-5">
         <h1>{user.name} خوش آمدید</h1>
         <p className="text-secondary-500">
           <span>تاریخ پیوستن </span>
           <span>{toLocalDateString(user.createdAt)}</span>
         </p>
       </div>
-      <div className="p-4 mt-10 mx-1">
+      <div className=" mt-10">
         <div className="flex items-center justify-between">
           <h2 className="font-bold">آخرین سفارشات کاربر</h2>
           <Link href='/profile/payments' className="text-primary-900">مشاهده همه سفارشات</Link>
