@@ -2,6 +2,11 @@
 
 import { logout } from "@/services/authServices"
 import Link from "next/link"
+import { HiOutlineHome, HiOutlineLogout } from "react-icons/hi"
+import { ImProfile } from "react-icons/im"
+import { CgProfile } from "react-icons/cg"
+import { MdOutlineIntegrationInstructions } from "react-icons/md"
+import { usePathname } from "next/navigation"
 
 function SideBar() {
     const logoutHandler = async () => {
@@ -14,26 +19,31 @@ function SideBar() {
         <div className="">
             <ul className="flex flex-col space-y-8 text-white">
                 <li>
-                    <Link href='/'>
+                    <Link className="menu-item" href='/'>
+                        <HiOutlineHome className="ml-2" />
                         صفحه اصلی
                     </Link>
                 </li>
                 <li>
-                    <Link href='/profile'>
+                    <Link className={`${pathname == "/profile" ? "bg-blue-900" : ""} menu-item`} href='/profile'>
+                        <CgProfile className="ml-2" />
                         داشبورد
                     </Link>
                 </li>
                 <li>
-                    <Link href='/profile/me'>
+                    <Link className={`${pathname == "/profile/me" ? "bg-blue-900" : ""} menu-item`} href='/profile/me'>
+                        <ImProfile className="ml-2" />
                         اطلاعات کاربری
                     </Link>
                 </li>
                 <li>
-                    <Link href='/profile/payments'>
+                    <Link className={`${pathname == "/profile/payments" ? "bg-blue-900" : ""} menu-item`} href='/profile/payments'>
+                        <MdOutlineIntegrationInstructions className="ml-2" />
                         سفارشات
                     </Link>
                 </li>
-                <li>
+                <li className="menu-item">
+                    <HiOutlineLogout className="ml-2" />
                     <button onClick={logoutHandler}>خروج از حساب کاربری</button>
                 </li>
             </ul>
