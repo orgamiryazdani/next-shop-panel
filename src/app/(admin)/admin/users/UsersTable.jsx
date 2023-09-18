@@ -5,7 +5,7 @@ import { HiCheckCircle } from "react-icons/hi"
 
 function UsersTable({ users }) {
   return (
-    <div className="shadow-sm overflow-auto my-8">
+    <div className="overflow-auto my-8 bg-white rounded-xl shadow-lg">
       <table className="border-collapse table-auto w-full min-w-[800px] text-sm">
         <thead>
           <tr>
@@ -36,7 +36,7 @@ function UsersTable({ users }) {
                   </div>
                 </td>
                 <td className="table__td">{toLocalDateStringShort(user.createdAt)}</td>
-                <td className="table__td font-bold text-lg">
+                <td className="table__td font-bold text-lg text-primary-900">
                   <Link href={`/admin/users/${user._id}`}>مشاهده جزییات</Link>
                 </td>
               </tr>

@@ -1,6 +1,7 @@
 import { couponListTableTHeads } from "@/constants/tableHeads";
 import { useRemoveCoupon } from "@/hooks/useCoupons";
 import { toLocalDateStringShort } from "@/utils/toLocalData";
+import { toPersianNumbersWithComma } from "@/utils/toPersianNumbers";
 import { useQueryClient } from "@tanstack/react-query";
 import Link from "next/link";
 import { toast } from "react-hot-toast";
@@ -22,7 +23,7 @@ function CouponListTable({ coupons }) {
   };
 
   return (
-    <div className="shadow-sm overflow-auto my-8">
+    <div className="shadow-lg bg-white rounded-xl overflow-auto my-8">
       <table className="border-collapse table-auto w-full min-w-[800px] text-sm">
         <thead>
           <tr>
@@ -46,7 +47,7 @@ function CouponListTable({ coupons }) {
                 <td className="table__td">
                   <span className="badge badge--primary">{coupon.type}</span>
                 </td>
-                <td className="table__td">{coupon.amount}</td>
+                <td className="table__td">{toPersianNumbersWithComma(coupon.amount)}</td>
                 <td className="table__td">
                   <div className="space-y-2 flex flex-col items-start">
                     {coupon.productIds.map((p) => {
@@ -66,13 +67,13 @@ function CouponListTable({ coupons }) {
                 <td className="table__td font-bold text-lg">
                   <div className="flex items-center gap-x-4">
                     <Link href={`/admin/coupons/${coupon._id}`}>
-                      <HiEye className="text-primary-900 w-6 h-6" />
+                      <HiEye className="text-secondary-600 w-6 h-6" />
                     </Link>
                     <button onClick={() => removeCouponHandler(coupon._id)}>
                       <HiTrash className="text-rose-600 w-6 h-6" />
                     </button>
                     <Link href={`/admin/coupons/edit/${coupon._id}`}>
-                      <RiEdit2Line className="w-6 h-6 text-secondary-600" />
+                      <RiEdit2Line className="w-6 h-6 text-primary-900" />
                     </Link>
                   </div>
                 </td>

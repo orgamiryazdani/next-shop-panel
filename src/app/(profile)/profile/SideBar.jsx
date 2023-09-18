@@ -16,7 +16,7 @@ function SideBar() {
     const pathname = usePathname();
 
     return (
-        <div className="">
+        <div>
             <ul className="flex flex-col space-y-8 text-white">
                 <li>
                     <Link className="menu-item" href='/'>

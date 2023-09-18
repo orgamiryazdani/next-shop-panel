@@ -22,7 +22,7 @@ function CategoryListTable({ categories }) {
     }
 
     return (
-        <div className="shadow-sm overflow-auto my-8">
+        <div className="shadow-lg rounded-xl bg-white overflow-auto my-8">
             <table className="border-collapse table-auto w-full min-w-[800px] text-sm">
                 <thead>
                     <tr>
@@ -47,13 +47,13 @@ function CategoryListTable({ categories }) {
                                 <td className="table__td font-bold text-lg">
                                     <div className="flex gap-x-4 items-center">
                                         <Link href={`/admin/categories/${category._id}`}>
-                                            <HiEye className="text-primary-900 w-6 h-6" />
+                                            <HiEye className="text-secondary-600 w-6 h-6" />
                                         </Link>
                                         <button onClick={() => removeProductHandler(category._id)}>
                                             <HiTrash className="text-rose-600 w-6 h-6" />
                                         </button>
                                         <Link href={`/admin/categories/edit/${category._id}`}>
-                                            <RiEdit2Line className="text-secondary-600 w-6 h-6" />
+                                            <RiEdit2Line className="text-primary-900 w-6 h-6" />
                                         </Link>
                                     </div>
                                 </td>

@@ -11,9 +11,9 @@ function CartPage() {
     const { user, cart } = data || {}
     if (isLoading) return <Loading />
     if (!user || !data) return (
-        <div className="container lg:max-w-screen-lg">
+        <div className="container w-full h-[90vh] flex items-center justify-center flex-col text-2xl">
             <p className="font-bold mb-4">برای مشاهده سبد خرید لطفا لاگین کنید</p>
-            <Link href="/auth" className="text-lg font-bold text-primary-900">
+            <Link href="/auth" className="font-bold text-primary-900">
                 رفتن به صفحه لاگین؟
             </Link>
         </div>

@@ -3,8 +3,8 @@ import Loading from "@/common/loading"
 
 function SendOTPForm({ phoneNumber, onChange, onSubmit, isLoading }) {
     return (
-        <div>
-            <form className="space-y-10" onSubmit={onSubmit}>
+        <div className="w-[100vw] h-[80vh] flex items-center justify-center">
+            <form className="space-y-10 w-96" onSubmit={onSubmit}>
                 <TextField label="شماره موبایل" name="phoneNumber" onChange={onChange} value={phoneNumber} />
                 <div>
                     {

@@ -1,7 +1,7 @@
 "use client"
 
 import Loading from "@/common/Loading";
-import { useGetUser, useGetUsers } from "@/hooks/useAuth"
+import { useGetUsers } from "@/hooks/useAuth"
 import UsersTable from "./UsersTable";
 
 function UsersPage() {
@@ -11,7 +11,7 @@ function UsersPage() {
 
     return (
         <div>
-            <h1>اطلاعات کاربران</h1>
+            <h1 className="text-xl font-bold">اطلاعات کاربران</h1>
             <UsersTable users={users}/>
         </div>
     )
