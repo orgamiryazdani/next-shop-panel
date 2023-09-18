@@ -53,7 +53,7 @@ const productsFormData = [
 
 function ProductForm({ onSubmit, tags, setTags, productData, productDataOnChange, categories, selectedCategory = "", setSelectedCategory, isLoading }) {
     return (
-        <div className="max-w-sm">
+        <div className="w-full px-10">
             <form onSubmit={onSubmit} className="space-y-4">
                 {
                     productsFormData.map((item) => {
@@ -90,7 +90,7 @@ function ProductForm({ onSubmit, tags, setTags, productData, productDataOnChange
                 <div>
                     {
                         isLoading ? <Loading /> :
-                            <button className="btn btn--primary w-full">تایید</button>
+                            <button className="btn btn--primary w-full mt-4">تایید</button>
                     }
                 </div>
             </form>

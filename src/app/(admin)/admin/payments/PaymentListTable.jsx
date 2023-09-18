@@ -1,8 +1,6 @@
 import { adminPaymentListTableTHeads } from "@/constants/tableHeads";
 import { toLocalDateStringShort } from "@/utils/toLocalData";
 import { toPersianNumbersWithComma } from "@/utils/toPersianNumbers";
-import Link from "next/link";
-import { HiEye } from "react-icons/hi";
 
 function PaymentListTable({ payments }) {
     return (
@@ -65,16 +63,6 @@ function PaymentListTable({ payments }) {
                                     ) : (
                                         <span className="badge badge--error">ناموفق</span>
                                     )}
-                                </td>
-                                <td>
-                                    <div>
-                                        <Link
-                                            href={`/admin/payments/${payment._id}`}
-                                            className="flex justify-center"
-                                        >
-                                            <HiEye className="w-6 h-6 text-primary-900" />
-                                        </Link>
-                                    </div>
                                 </td>
                             </tr>
                         );

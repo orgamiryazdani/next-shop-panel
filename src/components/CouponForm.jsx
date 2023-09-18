@@ -8,7 +8,7 @@ import persian_fa from "react-date-object/locales/persian_fa";
 
 function CouponForm({ isLoading, formData, onFormChange, onSubmit, type, setType, options, onChangeSelect, expireDate, setExpireDate, defaultValue = "" }) {
     return (
-        <div className="max-w-sm">
+        <div className="w-full px-10">
             <form className="space-y-4" onSubmit={onSubmit}>
                 <TextField
                     label="کد"
@@ -30,7 +30,7 @@ function CouponForm({ isLoading, formData, onFormChange, onSubmit, type, setType
                 />
                 <div>
                     <spa className="mb-2">نوع کد تخفیف</spa>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between w-44">
                         <RadioInput
                             checked={type === "percent"}
                             id="percent-type"
@@ -75,7 +75,7 @@ function CouponForm({ isLoading, formData, onFormChange, onSubmit, type, setType
                 </div>
                 <div>
                     {isLoading ? <Loading /> :
-                        <button className="btn btn--primary w-full">تایید</button>
+                        <button className="btn btn--primary w-full mt-4">تایید</button>
                     }
                 </div>
             </form>

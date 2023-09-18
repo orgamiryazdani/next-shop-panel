@@ -66,9 +66,6 @@ function CouponListTable({ coupons }) {
                 </td>
                 <td className="table__td font-bold text-lg">
                   <div className="flex items-center gap-x-4">
-                    <Link href={`/admin/coupons/${coupon._id}`}>
-                      <HiEye className="text-secondary-600 w-6 h-6" />
-                    </Link>
                     <button onClick={() => removeCouponHandler(coupon._id)}>
                       <HiTrash className="text-rose-600 w-6 h-6" />
                     </button>
