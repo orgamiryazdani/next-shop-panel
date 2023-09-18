@@ -46,9 +46,6 @@ function CategoryListTable({ categories }) {
                                 </td>
                                 <td className="table__td font-bold text-lg">
                                     <div className="flex gap-x-4 items-center">
-                                        <Link href={`/admin/categories/${category._id}`}>
-                                            <HiEye className="text-secondary-600 w-6 h-6" />
-                                        </Link>
                                         <button onClick={() => removeProductHandler(category._id)}>
                                             <HiTrash className="text-rose-600 w-6 h-6" />
                                         </button>

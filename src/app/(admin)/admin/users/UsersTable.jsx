@@ -1,6 +1,5 @@
 import { userListTableHeads } from "@/constants/tableHeads"
 import { toLocalDateStringShort } from "@/utils/toLocalData"
-import Link from "next/link"
 import { HiCheckCircle } from "react-icons/hi"
 
 function UsersTable({ users }) {
@@ -36,9 +35,6 @@ function UsersTable({ users }) {
                   </div>
                 </td>
                 <td className="table__td">{toLocalDateStringShort(user.createdAt)}</td>
-                <td className="table__td font-bold text-lg text-primary-900">
-                  <Link href={`/admin/users/${user._id}`}>مشاهده جزییات</Link>
-                </td>
               </tr>
             })
           }

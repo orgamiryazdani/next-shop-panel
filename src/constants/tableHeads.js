@@ -54,10 +54,6 @@ export const userPaymentTHeads = [
       id: 6,
       label: "تاریخ پیوستن",
     },
-    {
-      id: 7,
-      label: "مشاهده",
-    },
   ];
   
   export const productListTableTHeads = [
@@ -154,10 +150,6 @@ export const userPaymentTHeads = [
     {
       id: 8,
       label: "وضعیت",
-    },
-    {
-      id: 9,
-      label: "مشاهده",
     },
   ];
   

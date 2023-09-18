@@ -28,7 +28,7 @@ export const categoryType = [
 
 function CategoryForm({ category, onSubmit, handleChange, selectedType, setSelectedType, isLoading }) {
     return (
-        <div className="max-w-sm mb-10">
+        <div className="w-full px-10 mb-10">
             <form className="space-y-4" onSubmit={onSubmit}>
                 <TextField
                     name='title'
@@ -59,7 +59,7 @@ function CategoryForm({ category, onSubmit, handleChange, selectedType, setSelec
                 </div>
                 <div className="mt-2">
                     {isLoading ? <Loading /> :
-                        <button className="btn btn--primary w-full">تایید</button>
+                        <button className="btn btn--primary w-full mt-4">تایید</button>
                     }
                 </div>
             </form>
