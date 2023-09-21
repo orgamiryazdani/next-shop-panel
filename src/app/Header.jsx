@@ -14,9 +14,9 @@ function Header() {
         <header className={`static top-0 w-full transition-all duration-200 bg-white ${isLoading ? "blur-sm opacity-70" : "opacity-100 blur-0"}`}>
             <nav>
                 <ul className="flex items-center justify-between py-2 container xl:max-w-screen-xl">
-                    <div className="w-[37%] flex items-center justify-between">
+                    <div className="md:w-[37%] flex md:items-center md:justify-between bg-blue-700 flex-col w-3/4 h-[100vh] items-start">
                         <li>
-                            <Link className="block pt-2" href="/">
+                            <Link className="md:block flex md:pt-2 p-2 w-full bg-blue-900 rounded-xl" href="/">
                                 خانه
                                 <div className={pathname == "/" ? "w-1/2 rounded-xl bg-blue-400 h-[2px]" : ""}></div>
                             </Link>
