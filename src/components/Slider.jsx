@@ -19,7 +19,7 @@ function Slider() {
             }}
             navigation={false}
             modules={[Autoplay, Pagination, Navigation]}
-            className="slider"
+            className="slider z-10"
         >
             <SwiperSlide>
                 <img src='././images/2.jpg' alt="" />
