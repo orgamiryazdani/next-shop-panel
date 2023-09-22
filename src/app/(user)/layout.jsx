@@ -3,7 +3,6 @@ import Header from "../Header"
 import "../globals.css"
 import { Toaster } from "react-hot-toast"
 import Providers from "../Providers"
-
 export const metadata = {
   title: 'next shop panel',
   description: 'next.js amir yazdani',
