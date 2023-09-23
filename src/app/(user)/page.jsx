@@ -10,10 +10,10 @@ export default function Home() {
       <GoftinoChat />
       <Slider />
       <div className="w-full md:h-auto h-full flex md:items-start xl:items-center items-center justify-evenly flex-col xl:flex-col md:flex-row md:w-full xl:w-80">
-        <div>
+        <div className="mt-10 xl:mt-0">
           <CardsSlider />
         </div>
-        <div>
+        <div className="mt-10 xl:mt-0">
           <img src="././images/1.jpg" alt="" className="w-[250px] h-52" />
         </div>
       </div>

@@ -18,7 +18,7 @@ function Header() {
         <header className={`static top-0 w-full transition-all duration-200 bg-white ${isLoading ? "blur-sm opacity-70" : "opacity-100 blur-0"}`}>
             <nav>
                 <ul className="flex items-center justify-start py-2 container xl:max-w-screen-xl text">
-                    <div className={`${showMenu !== true ? "-right-[0%] w-0" : "-right-[100%] w-3/4"} text-sm lg:text-base !z-[50] md:w-[37%] md:relative md:-right-[0%] md:h-10 md:shadow-none transition-all duration-300 flex md:items-center md:justify-between bg-white md:bg-transparent p-2 absolute top-0 text-black shadow-2xl flex-col md:flex-row w-3/4 h-[100vh] items-start`}>
+                    <div className={`${showMenu !== true ? "-right-[0%] w-0" : "-right-[100%] w-3/4"} text-sm lg:text-base md:w-[37%] md:relative md:-right-[0%] md:h-10 md:shadow-none transition-all duration-300 flex md:items-center md:justify-between bg-white md:bg-transparent p-2 absolute top-0 text-black shadow-2xl flex-col md:flex-row w-3/4 h-[100vh] items-start`}>
                         <li>
                             <Link className="md:block flex flex-col md:pt-2 p-2 pt-5 w-full rounded-xl" href="/">
                                 خانه

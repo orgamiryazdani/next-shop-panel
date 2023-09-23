@@ -37,7 +37,7 @@ function ProductsFilter({ categories }) {
     }
 
     return (
-        <div className="bg-white w-56 p-2 rounded-2xl shadow-lg mr-20">
+        <div className="bg-white w-full md:w-56 p-2 rounded-2xl shadow-lg mb-10">
             <div className="font-bold flex items-center justify-between cursor-pointer" onClick={() => {
                 setShowFilter(!showFilter)
                 setShowMoreCategories(false)
