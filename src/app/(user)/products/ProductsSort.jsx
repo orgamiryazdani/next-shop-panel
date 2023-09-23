@@ -28,7 +28,6 @@ function ProductsSort() {
     const router = useRouter()
     const pathname = usePathname()
     const searchParams = useSearchParams()
-
     const [sort, setSort] = useState("")
 
     const createQueryString = useCallback(
@@ -50,7 +49,7 @@ function ProductsSort() {
     }, [])
 
     return (
-        <div className="bg-white w-56 p-2 rounded-2xl shadow-lg mr-20 mt-10">
+        <div className="bg-white w-full md:w-56 p-2 rounded-2xl shadow-lg mb-5">
             <div className="font-bold flex items-center justify-between cursor-pointer" onClick={() => setShowFilter(!showFilter)}>مرتب سازی محصولات
                 <div className={`${showFilter === true ? "rotate-180" : ""} transition-all duration-300 ease-in-out`}>
                     <BsChevronDown />
