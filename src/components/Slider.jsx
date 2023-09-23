@@ -7,6 +7,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 function Slider() {
     return (
+        <div className='xl:w-[75%] w-[100%] h-[200px]  xl:h-[500px] px-5 md:h-[500px] lg:px-20 xl:px-5'>
         <Swiper
             spaceBetween={30}
             centeredSlides={true}
@@ -28,6 +29,7 @@ function Slider() {
                 <img src='././images/3.jpg' alt="" />
             </SwiperSlide>
         </Swiper>
+        </div>
     )
 }
 
