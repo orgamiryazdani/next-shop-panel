@@ -5,13 +5,19 @@ import Slider from "@/components/Slider";
 export default function Home() {
 
   return (
-    <div className=" w-[100vw] h-[91vh] flex items-start flex-wrap pt-10">
+    <div className="w-[100vw] h-auto flex items-center justify-center">
+    <div className="max-w-screen-2xl w-full h-full flex items-start flex-wrap pt-10">
       <GoftinoChat />
       <Slider />
-      <div className="w-80 h-full flex items-center justify-around flex-col xl:flex-col md:flex-row md:w-full xl:w-80">
-        <CardsSlider />
-        <img src="././images/1.jpg" alt="" className="w-[250px] h-52" />
+      <div className="w-full md:h-auto h-full flex md:items-start xl:items-center items-center justify-evenly flex-col xl:flex-col md:flex-row md:w-full xl:w-80">
+        <div>
+          <CardsSlider />
+        </div>
+        <div>
+          <img src="././images/1.jpg" alt="" className="w-[250px] h-52" />
+        </div>
       </div>
+    </div>
     </div>
   )
 }
