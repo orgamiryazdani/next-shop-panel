@@ -13,7 +13,7 @@ function Page() {
 
     return (
         <div>
-            <div className="mb-5 flex items-center justify-between">
+            <div className="mb-5 flex text-sm md:text-base items-center justify-between">
                 <h1 className="text-xl font-bold mb-5">دسته بندی</h1>
                 <Link href="/admin/categories/add" className="font-bold text-primary-900 flex items-center gap-x-2">
                     <HiPlusCircle className="w-6 h-6" /> <span>اضافه کردن دسته بندی</span>

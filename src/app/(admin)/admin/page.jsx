@@ -10,15 +10,15 @@ function Admin() {
   return (
     <div className="flex items-center justify-center flex-col">
       <h1 className="font-bold text-xl">صفحه ادمین</h1>
-      <div className="bg-white shadow-lg rounded-xl w-[800px] h-96 mt-16 px-4 flex flex-col justify-around">
+      <div className="bg-white shadow-lg rounded-xl lg:w-[800px] w-[90%] h-96 mt-16 px-4 flex flex-col justify-around">
         <div className="flex items-center justify-between text-secondary-400">
-        <h1 className="font-bold text-xl text-black">{user.name}</h1>
-        <span>{toLocalDateString(user.createdAt)}</span>
+        <h1 className="font-bold md:text-xl text-black">{user.name}</h1>
+        <span className="text-xs md:text-base">{toLocalDateString(user.createdAt)}</span>
         </div>
-        <p className="border-b border-primary-500">سطح شما : {user.role}</p>
-        <p className="border-b border-primary-500">ایمیل : {user.email}</p>
-        <p className="border-b border-primary-500">شماره همراه : {user.phoneNumber}</p>
-        <p className="border-b border-primary-500">درباره شما : {user.biography}</p>
+        <p className="border-b text-sm md:text-base border-primary-500">سطح شما : {user.role}</p>
+        <p className="border-b text-sm md:text-base border-primary-500">ایمیل : {user.email}</p>
+        <p className="border-b text-sm md:text-base border-primary-500">شماره همراه : {user.phoneNumber}</p>
+        <p className="border-b text-sm md:text-base border-primary-500">درباره شما : {user.biography}</p>
       </div>
     </div>
   )

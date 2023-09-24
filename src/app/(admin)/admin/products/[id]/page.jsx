@@ -14,7 +14,7 @@ function Page() {
     //fetch based on Product Id to get product detail
 
     return (
-        <div className="w-full h-full flex items-center justify-center">
+        <div className="w-full h-full flex md:items-center md:justify-center">
             <div className="bg-white shadow-lg rounded-xl w-96 overflow-auto h-56 p-2 flex flex-col items-start justify-around">
                 <div className="flex items-center justify-between w-full">
                     <h1 className="mb-4 font-bold text-xl">{product.title}</h1>
