@@ -28,7 +28,7 @@ export const categoryType = [
 
 function CategoryForm({ category, onSubmit, handleChange, selectedType, setSelectedType, isLoading }) {
     return (
-        <div className="w-full px-10 mb-10">
+        <div className="w-full md:px-10 mb-10">
             <form className="space-y-4" onSubmit={onSubmit}>
                 <TextField
                     name='title'

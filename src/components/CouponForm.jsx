@@ -8,7 +8,7 @@ import persian_fa from "react-date-object/locales/persian_fa";
 
 function CouponForm({ isLoading, formData, onFormChange, onSubmit, type, setType, options, onChangeSelect, expireDate, setExpireDate, defaultValue = "" }) {
     return (
-        <div className="w-full px-10">
+        <div className="w-full md:px-10">
             <form className="space-y-4" onSubmit={onSubmit}>
                 <TextField
                     label="کد"

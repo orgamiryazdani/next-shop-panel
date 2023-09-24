@@ -13,7 +13,7 @@ export default function Home() {
         <div className="mt-10 xl:mt-0">
           <CardsSlider />
         </div>
-        <div className="mt-10 xl:mt-0">
+        <div className="mt-10 xl:mt-5">
           <img src="././images/1.jpg" alt="" className="w-[250px] h-52" />
         </div>
       </div>

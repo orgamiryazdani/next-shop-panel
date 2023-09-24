@@ -53,7 +53,7 @@ const productsFormData = [
 
 function ProductForm({ onSubmit, tags, setTags, productData, productDataOnChange, categories, selectedCategory = "", setSelectedCategory, isLoading }) {
     return (
-        <div className="w-full px-10">
+        <div className="w-full md:px-10">
             <form onSubmit={onSubmit} className="space-y-4">
                 {
                     productsFormData.map((item) => {

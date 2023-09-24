@@ -17,15 +17,15 @@ function SideBar() {
 
     return (
         <div>
-            <ul className="flex flex-col space-y-8 text-white">
+            <ul className="flex flex-col space-y-8 text-white relative">
                 <li>
-                    <Link className="menu-item" href='/'>
+                    <Link className="menu-item !z-40 absolute w-full" href='/'>
                         <HiOutlineHome className="ml-2" />
                         صفحه اصلی
                     </Link>
                 </li>
                 <li>
-                    <Link className={`${pathname == "/profile" ? "bg-blue-900" : ""} menu-item`} href='/profile'>
+                    <Link className={`${pathname == "/profile" ? "bg-blue-900" : ""} menu-item mt-8`} href='/profile'>
                         <CgProfile className="ml-2" />
                         داشبورد
                     </Link>
