@@ -37,9 +37,9 @@ function CartItem({ cartItem }) {
 
     return (
         <div className="bg-white shadow-lg rounded-xl p-4 flex justify-between">
-            <span className="flex-1 font-bold">{cartItem.title}</span>
-            <div className="flex items-center justify-between  gap-x-8 flex-1">
-                <div>
+            <div className="flex items-center justify-between flex-wrap  gap-x-8 flex-1">
+            <span className="md:flex-1 text-xs md:text-base font-bold mb-5 md:mb-0">{cartItem.title}</span>
+                <div className="text-xs md:text-base mr-5 md:mr-0 mb-5 md:mb-0">
                     <div>
                         قیمت : 
                         <span
@@ -54,30 +54,30 @@ function CartItem({ cartItem }) {
                             <p className="font-bold">
                                 {toPersianNumbersWithComma(cartItem.offPrice)}
                             </p>
-                            <div className="bg-rose-500 px-2 py-0.5 rounded-xl text-white text-sm">
+                            <div className="bg-rose-500 px-2 py-0.5 rounded-xl text-white text-xs md:text-sm">
                                 {toPersianNumbers(cartItem.discount)} %
                             </div>
                         </div>
                     )}
                 </div>
 
-                <span className="border-r-2 pr-2">
+                <span className="border-r-2 pr-2 text-xs md:text-base">
                     تعداد : {toPersianNumbers(cartItem.quantity)}
                 </span>
-                <div className="flex gap-x-3">
+                <div className="flex md:gap-x-3 gap-x-1">
                     <button
                         onClick={addToCartHandler}
-                        className="btn btn--primary p-2 ml-2"
+                        className="btn btn--primary md:p-2 p-1 ml-2"
                     >
-                        <HiPlus className="w-4 h-4" />
+                        <HiPlus className="md:w-4 md:h-4 w-3 h-3" />
                     </button>
                     <button onClick={decrementHandler} className="">
                         {cartItem.quantity > 1 ? (
-                            <div className="rounded-full text-white bg-secondary-100 p-2">
-                                <HiMinus className="w-4 h-4" />
+                            <div className="rounded-full text-white bg-secondary-100 md:p-2 p-1">
+                                <HiMinus className="md:w-4 md:h-4 w-3 h-3" />
                             </div>
                         ) : (
-                            <FaTrash className=" text-rose-500 w-5 h-5" />
+                            <FaTrash className=" text-rose-500 md:w-5 md:h-5 w-4 h-4" />
                         )}
                     </button>
                 </div>

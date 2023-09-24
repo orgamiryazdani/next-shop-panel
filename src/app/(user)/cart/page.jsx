@@ -28,14 +28,16 @@ function CartPage() {
         </div>
 
     return (
-        <div className="grid grid-cols-4 gap-8 p-10 w-[99vw]">
-            <div className="col-span-3 space-y-5">
-                {cart && cart.productDetail.map((item) => {
-                    return <CartItem key={item.id} cartItem={item} />
-                })}
-            </div>
-            <div className="col-span-1">
-                <CartSummery payDetail={cart.payDetail}/>
+        <div className="w-[99vw] flex items-center justify-center">
+            <div className="lg:grid flex flex-wrap grid-cols-4 gap-8 md:p-10 p-5 w-full max-w-screen-2xl">
+                <div className="lg:col-span-3 space-y-5 min-w-[200px] w-full">
+                    {cart && cart.productDetail.map((item) => {
+                        return <CartItem key={item.id} cartItem={item} />
+                    })}
+                </div>
+                <div className="lg:col-span-1 w-full min-w-[230px]">
+                    <CartSummery payDetail={cart.payDetail} />
+                </div>
             </div>
         </div>
     )
