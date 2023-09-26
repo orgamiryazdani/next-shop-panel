@@ -31,7 +31,6 @@ async function Products({ searchParams }) {
 
   return (
     <div className="flex items-start justify-center w-[100vw] min-h-[91.4vh] h-auto">
-
       <div className="flex items-start justify-center w-full h-full pt-10 max-w-screen-2xl">
         <div className="grid grid-cols-6">
           <CategorySidebar categories={categories} />

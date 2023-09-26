@@ -1,12 +1,12 @@
 "use client"
 import { useGetUser } from "@/hooks/useAuth"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useSearchParams,useRouter } from "next/navigation"
 import { CiSearch } from "react-icons/ci"
 import { BsCart2 } from "react-icons/bs"
 import { HiOutlineMenuAlt1 } from "react-icons/hi"
 import { MdOutlineClose } from "react-icons/md"
-import { useState } from "react"
+import { useCallback, useState } from "react"
 
 function Header() {
     const { data, isLoading } = useGetUser()
@@ -82,12 +82,36 @@ function Header() {
 export default Header
 
 function SearchHandler() {
+    const router = useRouter()
+    const pathname = usePathname()
+    const searchParams = useSearchParams()
+    const [searchValue, setSearchValue] = useState(searchParams.get("title") || [])
+
+    const createQueryString = useCallback(
+        (name, value) => {
+            const params = new URLSearchParams(searchParams)
+            params.set(name, value)
+            return params.toString()
+        }, [searchValue]
+    )
+
+    const searchHandler = (e) => {
+        const value = e.target.value;
+        if (searchValue) {
+            setSearchValue(searchValue)
+            router.push(pathname + "?" + createQueryString("title", searchValue))
+        } else {
+            setSearchValue([...searchValue, value])
+            router.push(pathname + "?" + createQueryString("title", [...searchValue, value]))
+        }
+    }
+
     return (
         <div className="md:w-[50%] w-[65%] flex items-center justify-center h-full">
-            <input type="search" className="outline-none bg-gray-100 w-4/6 rounded-r-xl border-none placeholder:text-gray-400 h-9 p-2" placeholder="جستجو..." />
-            <div className="w-10 h-9 rounded-l-xl flex items-center justify-center bg-gray-100 cursor-pointer">
+            <input value={searchValue} onChange={(e) => setSearchValue(e.target.value)} type="search" className="outline-none bg-gray-100 w-4/6 rounded-r-xl border-none placeholder:text-gray-400 h-9 p-2" placeholder="جستجو..." />
+            <button onClick={searchHandler} className="w-10 h-9 rounded-l-xl flex items-center justify-center bg-gray-100 cursor-pointer">
                 <CiSearch />
-            </div>
+            </button>
         </div>
     )
 }
