@@ -8,7 +8,6 @@ import AddToCart from "./[slug]/AddToCart"
 import LikeProduct from "./LikeProduct"
 import { cookies } from 'next/headers'
 import { toStringCookies } from "@/utils/toStringCookies"
-import { RiProductHuntFill } from "react-icons/ri"
 import { toPersianNumbers, toPersianNumbersWithComma } from "@/utils/toPersianNumbers"
 
 export const dynamic = "force-dynamic"; // eq to {cache :"no-store"} or SSR in pages Dir. :)

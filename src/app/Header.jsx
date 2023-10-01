@@ -85,7 +85,7 @@ function SearchHandler() {
     const router = useRouter()
     const pathname = usePathname()
     const searchParams = useSearchParams()
-    const [searchValue, setSearchValue] = useState(searchParams.get("title") || [])
+    const [searchValue, setSearchValue] = useState(searchParams.get("description") || [])
 
     const createQueryString = useCallback(
         (name, value) => {
@@ -99,19 +99,16 @@ function SearchHandler() {
         const value = e.target.value;
         if (searchValue) {
             setSearchValue(searchValue)
-            router.push(pathname + "?" + createQueryString("title", searchValue))
+            router.push(pathname + "?" + createQueryString("description", searchValue))
         } else {
             setSearchValue([...searchValue, value])
-            router.push(pathname + "?" + createQueryString("title", [...searchValue, value]))
+            router.push(pathname + "?" + createQueryString("description", [...searchValue, value]))
         }
     }
 
     return (
         <div className="md:w-[50%] w-[65%] flex items-center justify-center h-full">
-            <input value={searchValue} onChange={(e) => setSearchValue(e.target.value)} type="search" className="outline-none bg-gray-100 w-4/6 rounded-r-xl border-none placeholder:text-gray-400 h-9 p-2" placeholder="جستجو..." />
-            <button onClick={searchHandler} className="w-10 h-9 rounded-l-xl flex items-center justify-center bg-gray-100 cursor-pointer">
-                <CiSearch />
-            </button>
+            <img src="././images/9.png" alt="" className="w-3/4"/>
         </div>
     )
 }

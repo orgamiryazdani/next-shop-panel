@@ -38,7 +38,7 @@ function CartItem({ cartItem }) {
     return (
         <div className="bg-white shadow-lg rounded-xl p-4 flex justify-between">
             <div className="flex items-center justify-between flex-wrap  gap-x-8 flex-1">
-            <span className="md:flex-1 text-xs md:text-base font-bold mb-5 md:mb-0">{cartItem.title}</span>
+            <span className="text-xs md:text-base font-bold mb-5 md:mb-0">{cartItem.title}</span>
                 <div className="text-xs md:text-base mr-5 md:mr-0 mb-5 md:mb-0">
                     <div>
                         قیمت : 
